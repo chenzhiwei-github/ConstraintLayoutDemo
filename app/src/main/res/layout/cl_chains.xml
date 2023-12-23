@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+<!--
+        Chain 比较难描述，它是一种特殊的约束形式，
+        多个控件通过明确的相互约束来互相约束对方的位置，
+        从而形成一个链条，Chain 可以设定链条中的剩余空间的分发规则
+        例如，以下布局中三个 TextView
+        都明确规定了其左侧和右侧的约束条件，
+        三个 TextView 形成了一个整体，此时它们就可以称为一条链条
+
+        链条分为水平链条和竖直链条两种，
+
+        分别用
+        layout_constraintHorizontal_chainStyle
+         layout_constraintVertical_chainStyle
+         两个属性来设置，属性值有以下三种：
+        spread（默认值）
+        spread_inside
+        packed
+
+
+-->
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#f5ec7e"
+        android:gravity="center"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toStartOf="@+id/tv2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:background="#ff538c"
+        android:gravity="center"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toStartOf="@+id/tv3"
+        app:layout_constraintStart_toEndOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#41c0ff"
+        android:gravity="center"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

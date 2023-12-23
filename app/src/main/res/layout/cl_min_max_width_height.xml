@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--
+     在ConstraintLayout中提供了一些尺寸限制的属性，
+     可以用来限制最大、最小宽高度，
+     这些属性只有在给出的宽度或高度为wrap_content时才会生效，
+     比如想给宽度设置最小或最大值，那宽度就必须设置为wrap_content，
+     这个比较简单就不放示例代码了，具体的属性如下：
+    android:minWidth=""   设置view的最小宽度
+    android:minHeight=""  设置view的最小高度
+    android:maxWidth=""   设置view的最大宽度
+    android:maxHeight=""  设置view的最大高度
+
+
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>

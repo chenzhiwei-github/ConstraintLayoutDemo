@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+    <!--
+            角度约束
+
+           有些时候我们需要一个控件在某个控件的某个角度的位置，
+           那么通过其他的布局其实是不太好实现的，
+           但是ConstraintLayout为我们提供了角度位置相关的属性
+            app:layout_constraintCircle=""         目标控件id
+            app:layout_constraintCircleAngle=""    对于目标的角度(0-360)
+            app:layout_constraintCircleRadius=""   到目标中心的距离
+
+    -->
+    <ImageView
+        android:id="@+id/android"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/jetpack"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintCircle="@+id/android"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

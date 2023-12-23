@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+
+<!--
+
+    Group 用于控制多个控件的可见性，
+    先依靠 constraint_referenced_ids来绑定其它 View，
+    之后就可以通过单独控制 Group 的可见性
+    从而来间接改变绑定的 View 的可见性
+
+
+-->
+
+    <Button
+        android:id="@+id/btn_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Target Button"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Source Button"
+        android:textAllCaps="false"
+        app:layout_constraintCircle="@id/btn_target"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="120dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btn_target, btn_source" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

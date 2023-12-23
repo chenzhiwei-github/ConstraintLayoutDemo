@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ConstraintLayoutDemo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ConstraintLayoutDemo" parent="Base.Theme.ConstraintLayoutDemo" />
+
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <!--  去掉弹窗的Window边框  -->
+        <item name="android:windowFrame">@null</item>
+        <!--  去掉弹窗的标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--  设置弹窗的Window背景透明  -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--  设置弹窗浮现在Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--  开启弹窗阴暗背景  -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--  设置弹窗背景的阴暗程度  -->
+        <item name="android:backgroundDimAmount">0.6</item>
+        <!--  设置全屏  -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="dialog_anim_bottom1">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
+    <style name="dialog_anim_bottom2">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+    <style name="dialog_zoom">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_out</item>
+    </style>
+</resources>

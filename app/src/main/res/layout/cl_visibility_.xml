@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DAF3FE"
+    tools:context=".ConstraintLayoutActivity">
+
+    <!--
+         ConstraintLayout的内边距和外边距的使用方式其实是和其他布局一致的,
+         ConstraintLayout除此之外还有"GONE Margin"，
+         当依赖的目标view隐藏时会生效的属性，例如B被A依赖约束，
+         当B隐藏时B会缩成一个点，自身的margin效果失效，
+         A设置的GONE Margin就会生效，属性如下：
+
+         该控件设置了 layout_goneMarginStart="100dp" ,当A控件隐藏时才会生效
+          GONE Margin
+          app:layout_goneMarginBottom="0dp"
+          app:layout_goneMarginEnd="0dp"
+          app:layout_goneMarginLeft="0dp"
+          app:layout_goneMarginRight="0dp"
+          app:layout_goneMarginStart="0dp"
+          app:layout_goneMarginTop="0dp"
+
+          当目标A控件隐藏时，B的GONE Margin就会生效
+      -->
+    <TextView
+        android:id="@+id/A"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/B"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="B"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/A"
+        app:layout_constraintTop_toTopOf="@id/A"
+        app:layout_goneMarginStart="100dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

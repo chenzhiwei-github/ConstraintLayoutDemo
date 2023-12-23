@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+    <!--
+            Guideline
+            当需要一个任意位置的锚点时，
+            可以使用指示线（Guideline）来帮助定位，
+            Guideline 是 View 的子类，使用方式和普通的 View 相同，
+            但 Guideline 有着如下的特殊属性：
+
+            宽度和高度均为 0
+            可见性为 View.GONE
+
+            即指示线只是为了帮助其他 View 进行定位，实际上并不会出现在页面上
+            例如，如下代码加入了两条 Guideline，
+            可以选择使用百分比或实际距离来设置
+            app:layout_constraintGuide_begin="380dp"
+            app:layout_constraintGuide_percent="0.4"
+            Guideline 的位置，
+            并通过 orientation 属性来设置Guideline 的方向
+            android:orientation="vertical"
+
+    -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#f5ec7e"
+        android:gravity="center"
+        android:text="测试 Dialog 横竖屏UltraSpaceItemDecoration"
+        app:layout_constraintLeft_toRightOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

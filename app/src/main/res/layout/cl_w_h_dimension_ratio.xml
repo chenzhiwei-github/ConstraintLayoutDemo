@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayoutActivity">
+
+    <!--
+            宽高比
+            layout_constraintDimensionRatio
+
+            需要其宽度或者高度当中有一个值是可知的，且剩下的一个是 0dp。
+
+            控件的宽高尺寸比例则通过 “float值” 或者 “宽度 : 高度” 的形式来设置，
+
+            通过在比例值的前面添加 w 或者 h 来指明
+                             比例值是根据宽度还是高度来进行计算
+
+            app:layout_constraintDimensionRatio="h,1:2"
+            h 根据 h 来计算，
+            1：2  = w : h
+
+            例如。
+               2：1 = w:100  ,w= 50
+     -->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#f5ec7e"
+        android:gravity="center"
+        android:text="公众号：字节数组"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="h,2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="#5476fd"
+        android:gravity="center"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
